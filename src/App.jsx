@@ -1,9 +1,12 @@
+import Navbar from "./components/Navbar"
 
 function App() {
 
   return (
     <>
-      <h1 className='bg-slate-900 text-white w-full text-center'>Youtube video downloader</h1>
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+        <Navbar />
+      </div>
     </>
   )
 }
