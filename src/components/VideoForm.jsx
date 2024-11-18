@@ -19,7 +19,7 @@ const VideoForm = ({setVideoInfo}) => {
     }
 
   return (
-    <div className=' w-2/4 flex items-center gap-2 h-fit'>
+    <div className=' w-[55%] flex items-center gap-2 h-fit'>
         <input 
         type="text"
         className='border border-black rounded-md px-2 py-2 w-[80%] h-12'
@@ -29,7 +29,7 @@ const VideoForm = ({setVideoInfo}) => {
         />
         <button
         onClick={fetchVideoInfo}
-        className='bg-blue-700 text-white px-2 py-2 w-fit h-12 rounded-md'
+        className='bg-blue-700 text-white px-2 py-2 w-[150px] h-12 rounded-md font-semibold'
         >
             Fetch video info
         </button>

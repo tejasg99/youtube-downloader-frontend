@@ -5,7 +5,7 @@ const FormatSelector = ({formats, selectedFormat, setSelectedFormat, label}) => 
         <select
         value={selectedFormat}
         onChange={(e) => setSelectedFormat(e.target.value)}
-        className="border p-2 w-full"
+        className="border border-slate-800 p-2 w-full rounded-md"
         >
             <option value="">Select format</option>
             {formats.map((format, index) => (
