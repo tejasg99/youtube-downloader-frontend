@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "./components/Navbar";
 import VideoForm from "./components/VideoForm";
 import FormatSelector from "./components/FormatSelector";
+import DownloadButton from "./components/DownloadButton";
 
 function App() {
   const [videoInfo, setVideoInfo] = useState(null);
@@ -40,6 +41,13 @@ function App() {
                     selectedFormat={selectedAudioFormat}
                     setSelectedFormat={setSelectedAudioFormat}
                     label={"Audio Format"}
+                  />
+                </div>
+                <div className="flex justify-center items-center">
+                  <DownloadButton 
+                    url={videoInfo.originalUrl}
+                    videoFormatTag={selectedVideoFormat}
+                    audioFormatTag={selectedAudioFormat}
                   />
                 </div>
               </>
