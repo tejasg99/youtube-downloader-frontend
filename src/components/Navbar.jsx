@@ -1,7 +1,7 @@
 const Navbar = () => {
   return (
     <nav className="w-full flex items-center justify-around bg-transparent text-slate-900 p-4">
-      <h2 className="text-2xl font-semibold">Youtube video downloader</h2>
+      <h2 className="sm:text-xl md:text-2xl font-semibold">Youtube video downloader</h2>
       <a href="https://github.com/tejasg99/youtube-downloader-frontend">
         <svg
           xmlns="http://www.w3.org/2000/svg"

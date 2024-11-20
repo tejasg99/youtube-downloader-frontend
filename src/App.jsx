@@ -54,7 +54,7 @@ function App() {
             )}
             {!videoInfo && (
               <div>
-                <span className="text-xl font-semibold">Enter or paste the video link above to get started...</span>
+                <span className="text-sm md:text-xl font-semibold">Enter or paste the video link above to get started...</span>
               </div>
             )}
           </div>        

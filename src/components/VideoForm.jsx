@@ -19,17 +19,17 @@ const VideoForm = ({setVideoInfo}) => {
     }
 
   return (
-    <div className=' w-[55%] flex items-center gap-2 h-fit'>
+    <div className='w-full md:w-[55%] flex flex-col md:flex-row items-center gap-2 h-fit'>
         <input 
         type="text"
-        className='border border-black rounded-md px-2 py-2 w-[80%] h-12'
+        className='border border-black rounded-md px-2 py-2 w-full md:w-[80%] h-10 md:h-12'
         placeholder='Paste youtube video url here'
         value={url}
         onChange={(e) => setUrl(e.target.value)} 
         />
         <button
         onClick={fetchVideoInfo}
-        className='bg-blue-700 text-white px-2 py-2 w-[150px] h-12 rounded-md font-semibold'
+        className='bg-blue-700 hover:bg-blue-600 text-white px-0  py-2 w-[60%] md:w-[150px] h-10 md:h-12 rounded-md font-semibold'
         >
             Fetch video info
         </button>
