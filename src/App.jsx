@@ -15,32 +15,32 @@ function App() {
           <Navbar />        
         <div className="w-full h-full flex flex-col items-center p-4 mt-10 gap-10">
           <VideoForm setVideoInfo={setVideoInfo}/>
-          <div className="">
+          <div className=" flex flex-col md:items-center">
             {videoInfo && (
               <>
-                <div className="mb-4 p-2 flex gap-2 border border-slate-800 rounded-lg w-[95%]">
-                  <div className="">
+                <div className="mb-4 p-2 flex flex-col md:flex-row gap-2 border border-slate-800 rounded-lg md:w-[80%]">
+                  <div className="mx-auto">
                     <img 
                     src={videoInfo.thumbnail.url} 
                     alt="" 
                     className=" object-cover rounded-lg w-52 h-28"
                     />
                   </div>
-                  <h2 className="font-semibold text-[16px]">{videoInfo.title}</h2>
+                  <h2 className="font-medium md:font-semibold text-[12px] md:text-[16px]">{videoInfo.title}</h2>
                 </div>
-                <div className="flex items-center p-2">
-                  <h3 className="text-lg font-semibold mt-4">Select your preferred formats: </h3>
+                <div className="flex flex-col md:flex-row items-center justify-center p-2">
+                  <h3 className="text-sm md:text-lg font-medium md:font-semibold mt-4">Select your preferred formats: </h3>
                   <FormatSelector 
                     formats={videoInfo.videoFormats}
                     selectedFormat={selectedVideoFormat}
                     setSelectedFormat={setSelectedVideoFormat}
-                    label={"Video Format"}
+                    label={"Video"}
                   />
                   <FormatSelector 
                     formats={videoInfo.audioFormats}
                     selectedFormat={selectedAudioFormat}
                     setSelectedFormat={setSelectedAudioFormat}
-                    label={"Audio Format"}
+                    label={"Audio"}
                   />
                 </div>
                 <div className="flex justify-center items-center">

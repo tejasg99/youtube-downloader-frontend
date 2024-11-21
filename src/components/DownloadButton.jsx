@@ -23,7 +23,7 @@ const DownloadButton = ({url, videoFormatTag, audioFormatTag}) => {
   return (
     <button
     onClick={handleDownload}
-    className='bg-green-600 text-white font-semibold px-4 py-2 mt-4 w-40 h-14 rounded-md'
+    className='bg-green-700 hover:bg-green-600 text-white font-semibold md:text-lg px-0 md:px-2 py-1 md:py-2 mt-4 w-[50%] md:w-40 h-10 md:h-14 rounded-md'
     >
         Download video
     </button>
