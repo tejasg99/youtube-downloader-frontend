@@ -3,11 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const videoSlice = createSlice({
     name: "video",
     initialState: {
+        url: "",
         loading: false,
         progress: 0,
         videoInfo: null,
     },
     reducers: {
+        setUrl: (state, action) => {
+            state.url = action.payload;
+        },
         startLoading: (state) => {
             state.loading = true;
             state.progress = 0;
@@ -25,5 +29,5 @@ const videoSlice = createSlice({
     }
 })
 
-export const { startLoading, setProgress, setVideoInfo, stopLoading } = videoSlice.actions;
+export const { setUrl, startLoading, setProgress, setVideoInfo, stopLoading } = videoSlice.actions;
 export default videoSlice.reducer;

@@ -3,9 +3,10 @@ import Navbar from "./components/Navbar";
 import VideoForm from "./components/VideoForm";
 import FormatSelector from "./components/FormatSelector";
 import DownloadButton from "./components/DownloadButton";
+import { useSelector } from "react-redux";
 
 function App() {
-  const [videoInfo, setVideoInfo] = useState(null);
+  const videoInfo = useSelector((state) => state.video.videoInfo);
   const [selectedVideoFormat, setSelectedVideoFormat] = useState("");
   const [selectedAudioFormat, setSelectedAudioFormat] = useState("");
 
@@ -14,7 +15,7 @@ function App() {
       <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
           <Navbar />        
         <div className="w-full h-full flex flex-col items-center p-4 mt-10 gap-10">
-          <VideoForm setVideoInfo={setVideoInfo}/>
+          <VideoForm />
           <div className=" flex flex-col md:items-center">
             {videoInfo && (
               <>
@@ -43,7 +44,7 @@ function App() {
                     label={"Audio"}
                   />
                 </div>
-                <div className="flex justify-center items-center">
+                <div className="">
                   <DownloadButton 
                     url={videoInfo.originalUrl}
                     videoFormatTag={selectedVideoFormat}
