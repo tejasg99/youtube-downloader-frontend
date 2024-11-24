@@ -42,14 +42,15 @@ const DownloadButton = ({ url, videoFormatTag, audioFormatTag }) => {
       >
         {loading ? `Downloading...(${progress}%)` : "Download video"}
       </button>
-      {loading && (
+      {/* Loading state problem - state gets updated in the info button also */}
+      {/* {loading && (
         <div className="mt-2 w-full bg-gray-200 h-2 rounded">
         <div
             className="bg-green-600 h-2 rounded"
             style={{ width: `${progress}%` }}
         ></div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
