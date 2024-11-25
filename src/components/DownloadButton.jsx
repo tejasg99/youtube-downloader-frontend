@@ -38,19 +38,11 @@ const DownloadButton = ({ url, videoFormatTag, audioFormatTag }) => {
     <div className="w-full md:w-96 flex justify-center">
       <button
         onClick={handleDownload}
-        className="bg-green-700 hover:bg-green-600 text-white font-semibold md:text-lg w-[50%] md:w-[60%] px-0 md:px-2 py-1 md:py-2 mt-4 h-10 md:h-14 rounded-md"
+        className="bg-green-700 hover:bg-green-600 text-white font-semibold md:text-lg w-[50%] md:w-[60%] px-0 md:px-4 py-1 md:py-2 mt-4 h-10 md:h-14 rounded-md"
       >
         {loading ? `Downloading...(${progress}%)` : "Download video"}
       </button>
       {/* Loading state problem - state gets updated in the info button also */}
-      {/* {loading && (
-        <div className="mt-2 w-full bg-gray-200 h-2 rounded">
-        <div
-            className="bg-green-600 h-2 rounded"
-            style={{ width: `${progress}%` }}
-        ></div>
-        </div>
-      )} */}
     </div>
   );
 };
