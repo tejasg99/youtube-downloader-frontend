@@ -20,11 +20,17 @@ const DownloadButton = ({ url, videoFormatTag, audioFormatTag }) => {
         },
       });
 
+      // Extracting filename from Content-Disposition header
+      const fileName =
+      response.headers["content-disposition"]
+        ?.split("filename=")?.[1]
+        ?.replace(/"/g, "") || "fallback_video.mp4";
+
       // Creating a downloadable file from response
       const blob = new Blob([response.data], { type: "video/mp4" }); //object for video file
       const link = document.createElement("a"); //anchor element creation
       link.href = URL.createObjectURL(blob); //temporary url pointing to the blob obj
-      link.download = "video_with_audio.mp4"; //file name
+      link.download = fileName; //file name
       link.click(); //download trigger
     } catch (error) {
       console.log("Error while downloading: ", error);
