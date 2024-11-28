@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { startLoading, setProgress, stopLoading } from "../features/videoSlice";
+import { startDownload, stopDownload, setProgress } from "../features/downloadSlice";
 
 const DownloadButton = ({ url, videoFormatTag, audioFormatTag }) => {
   const dispatch = useDispatch();
-  const { loading, progress } = useSelector((state) => state.video);
+  const { loading, progress } = useSelector((state) => state.download);
 
   const handleDownload = async () => {
-    dispatch(startLoading());
+    dispatch(startDownload());
     try {
       const response = await axios.get("http://localhost:3000/api/download", {
         params: { url, videoFormatTag, audioFormatTag },
@@ -36,7 +36,7 @@ const DownloadButton = ({ url, videoFormatTag, audioFormatTag }) => {
       console.log("Error while downloading: ", error);
       alert("Failed to download the video");
     } finally {
-      dispatch(stopLoading());
+      dispatch(stopDownload());
     }
   };
 
@@ -45,10 +45,10 @@ const DownloadButton = ({ url, videoFormatTag, audioFormatTag }) => {
       <button
         onClick={handleDownload}
         className="bg-green-700 hover:bg-green-600 text-white font-semibold md:text-lg w-[50%] md:w-[60%] px-0 md:px-4 py-1 md:py-2 mt-4 h-10 md:h-14 rounded-md"
+        disabled={loading}
       >
         {loading ? `Downloading...(${progress}%)` : "Download video"}
       </button>
-      {/* Loading state problem - state gets updated in the info button also */}
     </div>
   );
 };
