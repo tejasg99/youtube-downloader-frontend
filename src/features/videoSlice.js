@@ -20,8 +20,13 @@ const videoSlice = createSlice({
         stopFetching: (state) => {
             state.fetching = false;
         },
+        resetVideoState: (state) => {
+            state.url = "";
+            state.videoInfo = null;
+            state.fetching = false;
+        },
     }
 })
 
-export const { setUrl, setVideoInfo, startFetching, stopFetching } = videoSlice.actions;
+export const { setUrl, setVideoInfo, startFetching, stopFetching, resetVideoState } = videoSlice.actions;
 export default videoSlice.reducer;
