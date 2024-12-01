@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import VideoForm from "./components/VideoForm";
 import FormatSelector from "./components/FormatSelector";
 import DownloadButton from "./components/DownloadButton";
+import DownloadStatus from "./components/DownloadStatus";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -50,6 +51,9 @@ function App() {
                     videoFormatTag={selectedVideoFormat}
                     audioFormatTag={selectedAudioFormat}
                   />
+                </div>
+                <div className="mt-4">
+                  <DownloadStatus />
                 </div>
               </>
             )}
