@@ -30,7 +30,7 @@ const DownloadStatus = () => {
     <>
       {loading && (
         <div className="w-full flex items-center justify-center gap-2">
-          <h3 className="text-lg font-semibold">{status}</h3>
+          <h3 className="text-lg font-semibold animate-bounce text-blue-600 transition-all duration-100 ease-in-out">{status}</h3>
         </div>
       )}
     </>
